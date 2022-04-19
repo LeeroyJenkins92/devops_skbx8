@@ -17,10 +17,8 @@ services:
       links:
         - todo 
       networks:
-         frontend:
-          ipv4_address: 10.0.0.10
-         backend:
-          ipv4_address: 192.168.0.10
+        - frontend
+        - backend
 
 # networks:
 #   frontend:
