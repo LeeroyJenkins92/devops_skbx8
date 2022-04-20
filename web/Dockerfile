@@ -1,6 +1,9 @@
 FROM python:2.7-stretch
 USER root
 # uWSGI:
+RUN apt-get update -yqq
+RUN apt-get install build-essential python-dev -y
+RUN apt-get install uwsgi-plugin-python -y
 RUN pip install uwsgi
 # Copy the base uWSGI ini file to enable default dynamic uwsgi process number
 COPY ./uwsgi.ini /etc/uwsgi/
